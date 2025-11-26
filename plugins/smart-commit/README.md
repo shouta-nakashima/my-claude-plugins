@@ -61,7 +61,7 @@ Git コミット時に、ブランチ名（例: `feature/user-auth`）と変更�
 変更内容: ユーザー認証機能を実装
 
 生成されるメッセージ:
-feat: ユーザー認証機能を追加
+feat: add user authentication feature
 ```
 
 #### 例2: バグ修正の場合
@@ -71,7 +71,7 @@ feat: ユーザー認証機能を追加
 変更内容: ログイン時のエラーハンドリングを修正
 
 生成されるメッセージ:
-fix: ログイン時のエラーハンドリングを修正
+fix: correct error handling in login flow
 ```
 
 #### 例3: ドキュメント更新の場合
@@ -81,7 +81,7 @@ fix: ログイン時のエラーハンドリングを修正
 変更内容: README.mdにインストール手順を追加
 
 生成されるメッセージ:
-docs: README にインストール手順を追加
+docs: update README with installation steps
 ```
 
 ## 利点

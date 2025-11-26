@@ -61,18 +61,19 @@ description: "ブランチ名と変更内容から適切なConventional Commits�
 <type>: <subject>
 ```
 
-- **subject**: 変更内容を簡潔に説明（日本語OK、50文字以内推奨）
-- 命令形で記述（例: "追加する" → "追加"）
+- **subject**: 変更内容を簡潔に説明（**英語で記述**、50文字以内推奨）
+- 命令形で記述（例: "add" not "added" or "adds"）
 - 末尾にピリオドは付けない
+- 小文字で始める
 
 ### 例
 
 ```
-feat: ユーザー認証機能を追加
-fix: ログイン時のエラーハンドリングを修正
-refactor: API クライアントのコードを整理
-docs: README にインストール手順を追加
-chore: 依存パッケージを更新
+feat: add user authentication feature
+fix: correct error handling in login flow
+refactor: restructure API client code
+docs: update README with installation steps
+chore: update dependencies
 ```
 
 ## 3. コミットの実行
