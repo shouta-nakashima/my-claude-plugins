@@ -29,6 +29,17 @@
         "url": "https://github.com/shouta-nakashima"
       },
       "tags": ["design", "frontend", "ui", "creative", "aesthetics", "react", "vue", "tailwind", "japanese", "typography", "evaluation", "review"]
+    },
+    {
+      "name": "smart-commit",
+      "source": "./plugins/smart-commit",
+      "description": "ブランチ名と変更内容から適切なConventional Commits形式のメッセージを自動生成してコミットを実行するプラグイン",
+      "version": "1.0.0",
+      "author": {
+        "name": "shouta-nakashima",
+        "url": "https://github.com/shouta-nakashima"
+      },
+      "tags": ["git", "commit", "conventional-commits", "automation"]
     }
   ]
 }
