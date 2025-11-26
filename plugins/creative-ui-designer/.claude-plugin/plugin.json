@@ -1,0 +1,16 @@
+{
+  "name": "creative-ui-designer",
+  "version": "1.2.0",
+  "description": "AIっぽい見た目を避け、独創的で洗練されたフロントエンドデザインを生成・評価するためのスキルとガイドライン。日本語フォント完全対応。デザイン評価機能搭載。",
+  "author": "shouta-nakashima",
+  "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
+  "license": "MIT",
+  "tags": ["design", "frontend", "ui", "creative", "aesthetics", "japanese", "typography", "evaluation", "review"],
+  "dependencies": {},
+  "autoDiscovery": {
+    "commands": true,
+    "skills": true,
+    "agents": false,
+    "hooks": false
+  }
+}
