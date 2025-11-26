@@ -1,0 +1,162 @@
+name: Validate Plugins
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Validate marketplace.json
+      run: |
+        echo "Validating marketplace.json..."
+        if [ ! -f ".claude-plugin/marketplace.json" ]; then
+          echo "Error: marketplace.json not found"
+          exit 1
+        fi
+
+        # JSON形式の検証
+        if ! jq empty .claude-plugin/marketplace.json 2>/dev/null; then
+          echo "Error: marketplace.json is not valid JSON"
+          exit 1
+        fi
+
+        echo "✓ marketplace.json is valid"
+
+    - name: Validate plugin.json files
+      run: |
+        echo "Validating all plugin.json files..."
+
+        EXIT_CODE=0
+        for plugin_dir in plugins/*/; do
+          if [ -d "$plugin_dir" ]; then
+            plugin_name=$(basename "$plugin_dir")
+            plugin_json="$plugin_dir.claude-plugin/plugin.json"
+
+            echo "Checking plugin: $plugin_name"
+
+            # plugin.jsonの存在確認
+            if [ ! -f "$plugin_json" ]; then
+              echo "  ✗ Error: plugin.json not found in $plugin_name"
+              EXIT_CODE=1
+              continue
+            fi
+
+            # JSON形式の検証
+            if ! jq empty "$plugin_json" 2>/dev/null; then
+              echo "  ✗ Error: plugin.json in $plugin_name is not valid JSON"
+              EXIT_CODE=1
+              continue
+            fi
+
+            # 必須フィールドの確認
+            if ! jq -e '.name' "$plugin_json" > /dev/null; then
+              echo "  ✗ Error: 'name' field missing in $plugin_name/plugin.json"
+              EXIT_CODE=1
+            fi
+
+            if ! jq -e '.version' "$plugin_json" > /dev/null; then
+              echo "  ✗ Error: 'version' field missing in $plugin_name/plugin.json"
+              EXIT_CODE=1
+            fi
+
+            if ! jq -e '.description' "$plugin_json" > /dev/null; then
+              echo "  ✗ Error: 'description' field missing in $plugin_name/plugin.json"
+              EXIT_CODE=1
+            fi
+
+            if [ $EXIT_CODE -eq 0 ]; then
+              echo "  ✓ $plugin_name is valid"
+            fi
+          fi
+        done
+
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo ""
+          echo "Validation failed. Please fix the errors above."
+          exit 1
+        fi
+
+        echo ""
+        echo "✓ All plugins are valid"
+
+    - name: Validate README files
+      run: |
+        echo "Checking for README files..."
+
+        EXIT_CODE=0
+        for plugin_dir in plugins/*/; do
+          if [ -d "$plugin_dir" ]; then
+            plugin_name=$(basename "$plugin_dir")
+            readme="$plugin_dir/README.md"
+
+            if [ ! -f "$readme" ]; then
+              echo "  ✗ Warning: README.md not found in $plugin_name"
+              EXIT_CODE=1
+            else
+              echo "  ✓ $plugin_name has README.md"
+            fi
+          fi
+        done
+
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo ""
+          echo "⚠ Some plugins are missing README.md files"
+        fi
+
+    - name: Check marketplace consistency
+      run: |
+        echo "Checking marketplace.json consistency..."
+
+        # marketplace.jsonに登録されているプラグインが実際に存在するか確認
+        EXIT_CODE=0
+
+        plugin_count=$(jq '.plugins | length' .claude-plugin/marketplace.json)
+        echo "Found $plugin_count plugins in marketplace.json"
+
+        for i in $(seq 0 $((plugin_count - 1))); do
+          plugin_name=$(jq -r ".plugins[$i].name" .claude-plugin/marketplace.json)
+          plugin_dir="plugins/$plugin_name"
+
+          if [ ! -d "$plugin_dir" ]; then
+            echo "  ✗ Error: Plugin '$plugin_name' listed in marketplace.json but directory not found"
+            EXIT_CODE=1
+          else
+            echo "  ✓ Plugin '$plugin_name' exists"
+          fi
+        done
+
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo ""
+          echo "Marketplace consistency check failed"
+          exit 1
+        fi
+
+        echo ""
+        echo "✓ Marketplace is consistent"
+
+    - name: Summary
+      if: success()
+      run: |
+        echo ""
+        echo "========================================="
+        echo "✓ All validation checks passed!"
+        echo "========================================="
+        echo ""
+        echo "Plugin validation summary:"
+        echo "- marketplace.json: Valid"
+        echo "- All plugin.json files: Valid"
+        echo "- Marketplace consistency: Valid"
+        echo ""

@@ -1,0 +1,16 @@
+{
+  "name": "plugin-name",
+  "version": "1.0.0",
+  "description": "プラグインの説明をここに記載",
+  "author": "shouta-nakashima",
+  "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
+  "license": "MIT",
+  "tags": ["tag1", "tag2"],
+  "dependencies": {},
+  "autoDiscovery": {
+    "commands": true,
+    "skills": true,
+    "agents": true,
+    "hooks": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "My Claude Plugins Marketplace",
+  "owner": "shouta-nakashima",
+  "description": "個人用Claude Codeプラグインのコレクション - スキル、コマンド、エージェントを一元管理",
+  "version": "1.0.0",
+  "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
+  "plugins": [
+    {
+      "name": "hello-world",
+      "source": "https://github.com/shouta-nakashima/my-claude-plugins/tree/main/plugins/hello-world",
+      "description": "Claude Codeプラグイン開発のサンプル - 基本的なコマンドとスキルの実装例",
+      "version": "1.0.0",
+      "author": "shouta-nakashima",
+      "tags": ["example", "tutorial", "getting-started"]
+    }
+  ]
+}
