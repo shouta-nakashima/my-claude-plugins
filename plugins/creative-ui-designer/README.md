@@ -317,16 +317,6 @@ distinctive-ui-designスキルを使って、ボタンコンポーネントを�
 - **ARIA属性**: セマンティックHTMLが不十分な場合に追加
 - **prefers-reduced-motion**: アニメーションはユーザーの設定を尊重
 
-## 貢献
-
-プルリクエストを歓迎します!以下の手順で貢献できます:
-
-1. このリポジトリをフォーク
-2. 機能ブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. 変更をコミット (`git commit -m 'Add amazing feature'`)
-4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
-5. プルリクエストを作成
-
 ## ライセンス
 
 MIT
