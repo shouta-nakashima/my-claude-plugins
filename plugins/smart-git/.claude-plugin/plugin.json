@@ -1,0 +1,13 @@
+{
+  "name": "smart-git",
+  "version": "1.0.0",
+  "description": "コミットとPR作成を効率化するGit操作プラグイン。Conventional Commits形式のコミットメッセージ自動生成とGitHub PR作成をサポート",
+  "author": "shouta-nakashima",
+  "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
+  "license": "MIT",
+  "tags": ["git", "commit", "pull-request", "github", "conventional-commits", "automation"],
+  "autoDiscovery": {
+    "commands": true,
+    "skills": true
+  }
+}

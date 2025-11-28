@@ -31,15 +31,15 @@
       "tags": ["design", "frontend", "ui", "creative", "aesthetics", "react", "vue", "tailwind", "japanese", "typography", "evaluation", "review"]
     },
     {
-      "name": "smart-commit",
-      "source": "./plugins/smart-commit",
-      "description": "ブランチ名と変更内容から適切なConventional Commits形式のメッセージを自動生成してコミットを実行するプラグイン",
+      "name": "smart-git",
+      "source": "./plugins/smart-git",
+      "description": "コミットとPR作成を効率化するGit操作プラグイン。Conventional Commits形式のコミットメッセージ自動生成とGitHub PR作成をサポート",
       "version": "1.0.0",
       "author": {
         "name": "shouta-nakashima",
         "url": "https://github.com/shouta-nakashima"
       },
-      "tags": ["git", "commit", "conventional-commits", "automation"]
+      "tags": ["git", "commit", "pull-request", "github", "conventional-commits", "automation"]
     }
   ]
 }
