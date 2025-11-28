@@ -1,13 +1,14 @@
 {
   "name": "hello-world",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Claude Codeプラグイン開発のサンプル - 基本的なコマンドとスキルの実装例",
-  "author": "shouta-nakashima",
+  "author": {
+    "name": "shouta-nakashima",
+    "url": "https://github.com/shouta-nakashima"
+  },
   "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
   "license": "MIT",
-  "tags": ["example", "tutorial", "getting-started"],
-  "autoDiscovery": {
-    "commands": true,
-    "skills": true
-  }
+  "keywords": ["example", "tutorial", "getting-started"],
+  "commands": "./commands",
+  "skills": "./skills"
 }

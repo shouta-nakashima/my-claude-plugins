@@ -56,7 +56,7 @@ my-claude-plugins/
 }
 ```
 
-### `plugins/*/. claude-plugin/plugin.json`
+### `plugins/*/.claude-plugin/plugin.json`
 
 各プラグインのメタデータファイル（必須）。
 
@@ -64,6 +64,31 @@ my-claude-plugins/
 - `name`: プラグイン名（kebab-case）
 - `version`: バージョン（セマンティックバージョニング）
 - `description`: 説明
+
+**推奨される形式**（Claude Code検証との互換性を確保）:
+```json
+{
+  "name": "plugin-name",
+  "version": "1.0.0",
+  "description": "プラグインの説明",
+  "author": {
+    "name": "作者名",
+    "url": "https://github.com/username"
+  },
+  "repository": "https://github.com/username/repo",
+  "license": "MIT",
+  "keywords": ["keyword1", "keyword2"],
+  "commands": "./commands",
+  "skills": "./skills",
+  "agents": "./agents",
+  "hooks": "./hooks"
+}
+```
+
+**注意**: 以下の形式は検証エラーになる可能性があります：
+- `author` を文字列で指定（オブジェクト形式を使用してください）
+- `tags` フィールド（代わりに `keywords` を使用）
+- `autoDiscovery` フィールド（代わりに明示的なパス指定を使用）
 
 ## 開発ワークフロー
 
@@ -201,7 +226,14 @@ done
 
 - `plugin.json` が `.claude-plugin/` ディレクトリにあるか確認
 - JSON形式が正しいか確認: `jq empty plugin.json`
-- `autoDiscovery` が有効になっているか確認
+- コンポーネントのパスが正しく指定されているか確認（例: `"commands": "./commands"`）
+
+### plugin.json の検証エラー
+
+よくあるエラーと対処法:
+- `author: Expected object, received string` → `author` をオブジェクト形式に変更: `{"name": "...", "url": "..."}`
+- `Unrecognized key(s) in object: 'tags'` → `tags` を `keywords` に変更
+- `Unrecognized key(s) in object: 'autoDiscovery'` → 明示的なパス指定に変更: `"commands": "./commands"`
 
 ### マーケットプレイスからインストールできない
 
