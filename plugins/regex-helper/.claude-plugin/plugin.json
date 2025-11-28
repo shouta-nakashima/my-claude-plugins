@@ -1,0 +1,14 @@
+{
+  "name": "regex-helper",
+  "version": "1.0.0",
+  "description": "対話型で正規表現を作成・テスト・デバッグできるプラグイン。自然言語やサンプル文字列からの生成、言語間変換もサポート",
+  "author": {
+    "name": "shouta-nakashima",
+    "url": "https://github.com/shouta-nakashima"
+  },
+  "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
+  "license": "MIT",
+  "keywords": ["regex", "regular-expression", "pattern", "validation", "text-processing", "developer-tools"],
+  "commands": "./commands",
+  "skills": "./skills"
+}

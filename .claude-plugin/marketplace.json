@@ -40,6 +40,17 @@
         "url": "https://github.com/shouta-nakashima"
       },
       "tags": ["git", "commit", "pull-request", "github", "conventional-commits", "automation"]
+    },
+    {
+      "name": "regex-helper",
+      "source": "./plugins/regex-helper",
+      "description": "対話型で正規表現を作成・テスト・デバッグできるプラグイン。自然言語やサンプル文字列からの生成、言語間変換もサポート",
+      "version": "1.0.0",
+      "author": {
+        "name": "shouta-nakashima",
+        "url": "https://github.com/shouta-nakashima"
+      },
+      "tags": ["regex", "regular-expression", "pattern", "validation", "text-processing", "developer-tools"]
     }
   ]
 }

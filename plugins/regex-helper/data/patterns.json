@@ -1,0 +1,312 @@
+{
+  "categories": {
+    "contact": {
+      "name": "連絡先",
+      "patterns": [
+        {
+          "name": "メールアドレス（一般）",
+          "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+          "flags": "",
+          "description": "一般的なメールアドレスにマッチ",
+          "examples": ["user@example.com", "test.name+tag@company.co.jp"]
+        },
+        {
+          "name": "メールアドレス（厳密）",
+          "pattern": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$",
+          "flags": "",
+          "description": "RFC 5322に近い厳密なメールアドレス検証",
+          "examples": ["user.name+tag@example.co.jp"]
+        },
+        {
+          "name": "電話番号（日本・ハイフンあり）",
+          "pattern": "0\\d{1,4}-\\d{1,4}-\\d{4}",
+          "flags": "",
+          "description": "日本の電話番号（固定・携帯）",
+          "examples": ["03-1234-5678", "090-1234-5678"]
+        },
+        {
+          "name": "電話番号（携帯のみ）",
+          "pattern": "0[789]0-\\d{4}-\\d{4}",
+          "flags": "",
+          "description": "日本の携帯電話番号",
+          "examples": ["090-1234-5678", "080-9999-0000"]
+        },
+        {
+          "name": "電話番号（ハイフンなし）",
+          "pattern": "0\\d{9,10}",
+          "flags": "",
+          "description": "ハイフンなしの電話番号",
+          "examples": ["0312345678", "09012345678"]
+        }
+      ]
+    },
+    "web": {
+      "name": "Web",
+      "patterns": [
+        {
+          "name": "URL（http/https）",
+          "pattern": "https?://[\\w\\-._~:/?#\\[\\]@!$&'()*+,;=%]+",
+          "flags": "",
+          "description": "httpまたはhttpsのURL",
+          "examples": ["https://example.com/path?query=1"]
+        },
+        {
+          "name": "ドメイン名",
+          "pattern": "(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]{2,}",
+          "flags": "",
+          "description": "ドメイン名（サブドメイン含む）",
+          "examples": ["www.example.com", "sub.domain.co.jp"]
+        },
+        {
+          "name": "IPv4アドレス",
+          "pattern": "(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}",
+          "flags": "",
+          "description": "IPv4アドレス（0.0.0.0〜255.255.255.255）",
+          "examples": ["192.168.1.1", "10.0.0.1"]
+        },
+        {
+          "name": "IPv6アドレス（簡易）",
+          "pattern": "(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}",
+          "flags": "",
+          "description": "IPv6アドレス（省略なし）",
+          "examples": ["2001:0db8:85a3:0000:0000:8a2e:0370:7334"]
+        }
+      ]
+    },
+    "datetime": {
+      "name": "日付・時刻",
+      "patterns": [
+        {
+          "name": "日付（YYYY-MM-DD）",
+          "pattern": "\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])",
+          "flags": "",
+          "description": "ISO 8601形式の日付",
+          "examples": ["2024-01-15", "2024-12-31"]
+        },
+        {
+          "name": "日付（YYYY/MM/DD）",
+          "pattern": "\\d{4}/(?:0[1-9]|1[0-2])/(?:0[1-9]|[12]\\d|3[01])",
+          "flags": "",
+          "description": "スラッシュ区切りの日付",
+          "examples": ["2024/01/15", "2024/12/31"]
+        },
+        {
+          "name": "日付（日本語）",
+          "pattern": "\\d{4}年(?:0?[1-9]|1[0-2])月(?:0?[1-9]|[12]\\d|3[01])日",
+          "flags": "",
+          "description": "日本語形式の日付",
+          "examples": ["2024年1月15日", "2024年12月31日"]
+        },
+        {
+          "name": "時刻（HH:MM）",
+          "pattern": "(?:[01]\\d|2[0-3]):[0-5]\\d",
+          "flags": "",
+          "description": "24時間形式の時刻",
+          "examples": ["09:30", "23:59"]
+        },
+        {
+          "name": "時刻（HH:MM:SS）",
+          "pattern": "(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d",
+          "flags": "",
+          "description": "秒を含む24時間形式の時刻",
+          "examples": ["09:30:00", "23:59:59"]
+        },
+        {
+          "name": "ISO 8601（日時）",
+          "pattern": "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})?",
+          "flags": "",
+          "description": "ISO 8601形式の日時",
+          "examples": ["2024-01-15T09:30:00Z", "2024-01-15T09:30:00+09:00"]
+        }
+      ]
+    },
+    "japan": {
+      "name": "日本固有",
+      "patterns": [
+        {
+          "name": "郵便番号",
+          "pattern": "〒?\\d{3}-?\\d{4}",
+          "flags": "",
+          "description": "日本の郵便番号（〒あり/なし、ハイフンあり/なし）",
+          "examples": ["〒123-4567", "123-4567", "1234567"]
+        },
+        {
+          "name": "ひらがな",
+          "pattern": "[\\u3040-\\u309F]+",
+          "flags": "",
+          "description": "ひらがなのみ",
+          "examples": ["あいうえお", "こんにちは"]
+        },
+        {
+          "name": "カタカナ",
+          "pattern": "[\\u30A0-\\u30FF]+",
+          "flags": "",
+          "description": "カタカナのみ",
+          "examples": ["アイウエオ", "コンニチハ"]
+        },
+        {
+          "name": "漢字",
+          "pattern": "[\\u4E00-\\u9FFF]+",
+          "flags": "",
+          "description": "漢字のみ",
+          "examples": ["日本語", "漢字"]
+        },
+        {
+          "name": "全角文字",
+          "pattern": "[^\\x00-\\x7F]+",
+          "flags": "",
+          "description": "全角文字（ASCII以外）",
+          "examples": ["日本語テスト", "１２３"]
+        }
+      ]
+    },
+    "validation": {
+      "name": "バリデーション",
+      "patterns": [
+        {
+          "name": "パスワード（基本）",
+          "pattern": "^.{8,}$",
+          "flags": "",
+          "description": "8文字以上",
+          "examples": ["password123"]
+        },
+        {
+          "name": "パスワード（中強度）",
+          "pattern": "^(?=.*[A-Z])(?=.*\\d).{8,}$",
+          "flags": "",
+          "description": "8文字以上、大文字と数字を含む",
+          "examples": ["Password1"]
+        },
+        {
+          "name": "パスワード（高強度）",
+          "pattern": "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*]).{12,}$",
+          "flags": "",
+          "description": "12文字以上、大文字・小文字・数字・記号を含む",
+          "examples": ["SecurePass1!"]
+        },
+        {
+          "name": "ユーザー名（英数字）",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]{2,19}$",
+          "flags": "",
+          "description": "英字で始まる3〜20文字の英数字・アンダースコア",
+          "examples": ["user_123", "JohnDoe"]
+        },
+        {
+          "name": "スラッグ（URL用）",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "flags": "",
+          "description": "URLに使えるスラッグ形式",
+          "examples": ["hello-world", "my-first-post"]
+        }
+      ]
+    },
+    "programming": {
+      "name": "プログラミング",
+      "patterns": [
+        {
+          "name": "変数名（キャメルケース）",
+          "pattern": "^[a-z][a-zA-Z0-9]*$",
+          "flags": "",
+          "description": "小文字で始まるキャメルケース",
+          "examples": ["userName", "totalCount"]
+        },
+        {
+          "name": "変数名（スネークケース）",
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "flags": "",
+          "description": "小文字とアンダースコアのスネークケース",
+          "examples": ["user_name", "total_count"]
+        },
+        {
+          "name": "定数名（SCREAMING_SNAKE_CASE）",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "flags": "",
+          "description": "大文字とアンダースコアの定数形式",
+          "examples": ["MAX_VALUE", "API_KEY"]
+        },
+        {
+          "name": "HTMLタグ",
+          "pattern": "<([a-zA-Z][a-zA-Z0-9]*)(\\s[^>]*)?>",
+          "flags": "",
+          "description": "HTML開始タグ",
+          "examples": ["<div>", "<a href=\"#\">"]
+        },
+        {
+          "name": "HTMLタグ（ペア）",
+          "pattern": "<([a-zA-Z][a-zA-Z0-9]*)[^>]*>.*?</\\1>",
+          "flags": "s",
+          "description": "HTML開始タグと終了タグのペア",
+          "examples": ["<div>content</div>"]
+        },
+        {
+          "name": "コメント（//形式）",
+          "pattern": "//.*$",
+          "flags": "m",
+          "description": "単一行コメント",
+          "examples": ["// This is a comment"]
+        },
+        {
+          "name": "コメント（/* */形式）",
+          "pattern": "/\\*[\\s\\S]*?\\*/",
+          "flags": "",
+          "description": "複数行コメント",
+          "examples": ["/* comment */"]
+        }
+      ]
+    },
+    "numbers": {
+      "name": "数値・金額",
+      "patterns": [
+        {
+          "name": "整数",
+          "pattern": "-?\\d+",
+          "flags": "",
+          "description": "正または負の整数",
+          "examples": ["123", "-456"]
+        },
+        {
+          "name": "小数",
+          "pattern": "-?\\d+\\.\\d+",
+          "flags": "",
+          "description": "小数点を含む数値",
+          "examples": ["3.14", "-0.5"]
+        },
+        {
+          "name": "カンマ区切り数値",
+          "pattern": "\\d{1,3}(?:,\\d{3})*",
+          "flags": "",
+          "description": "3桁ごとにカンマ区切りの数値",
+          "examples": ["1,234", "1,234,567"]
+        },
+        {
+          "name": "金額（円）",
+          "pattern": "¥[\\d,]+",
+          "flags": "",
+          "description": "円記号付きの金額",
+          "examples": ["¥1,000", "¥12,345"]
+        },
+        {
+          "name": "金額（ドル）",
+          "pattern": "\\$[\\d,]+(?:\\.\\d{2})?",
+          "flags": "",
+          "description": "ドル記号付きの金額",
+          "examples": ["$100", "$1,234.56"]
+        },
+        {
+          "name": "パーセンテージ",
+          "pattern": "\\d+(?:\\.\\d+)?%",
+          "flags": "",
+          "description": "パーセント表記",
+          "examples": ["50%", "3.14%"]
+        },
+        {
+          "name": "16進数",
+          "pattern": "0x[0-9a-fA-F]+",
+          "flags": "",
+          "description": "16進数表記",
+          "examples": ["0xFF", "0x1a2b3c"]
+        }
+      ]
+    }
+  }
+}
