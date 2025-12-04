@@ -9,17 +9,6 @@
   "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
   "plugins": [
     {
-      "name": "hello-world",
-      "source": "./plugins/hello-world",
-      "description": "Claude Codeプラグイン開発のサンプル - 基本的なコマンドとスキルの実装例",
-      "version": "1.0.0",
-      "author": {
-        "name": "shouta-nakashima",
-        "url": "https://github.com/shouta-nakashima"
-      },
-      "tags": ["example", "tutorial", "getting-started"]
-    },
-    {
       "name": "creative-ui-designer",
       "source": "./plugins/creative-ui-designer",
       "description": "AIっぽい見た目を避け、独創的で洗練されたフロントエンドデザインを生成・評価するためのスキルとガイドライン。タイポグラフィ、配色、背景効果、アニメーションの4つの領域で高品質なUIコンポーネントを作成・評価。日本語フォント完全対応。",

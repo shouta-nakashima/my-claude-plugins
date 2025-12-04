@@ -26,7 +26,7 @@ Claude Codeで以下のコマンドを実行：
 ### プラグインのインストール
 
 ```bash
-/plugin install hello-world@my-claude-plugins
+/plugin install smart-git@my-claude-plugins
 ```
 
 ### 利用可能なプラグインを確認
@@ -78,18 +78,6 @@ AIっぽくない、独創的で印象的なUIデザインを生成するプラ�
 
 ```bash
 /plugin install creative-ui-designer@my-claude-plugins
-```
-
----
-
-### [hello-world](plugins/hello-world/README.md)
-
-Claude Codeプラグイン開発の入門用サンプルプラグイン。新しいプラグインを作成する際の参考にどうぞ。
-
-- `/hello-world:greet` - 挨拶メッセージを表示
-
-```bash
-/plugin install hello-world@my-claude-plugins
 ```
 
 ## ライセンス
