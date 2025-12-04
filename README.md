@@ -39,57 +39,57 @@ Claude Codeで以下のコマンドを実行：
 
 ## 利用可能なプラグイン
 
-### hello-world
+### [smart-git](plugins/smart-git/README.md)
 
-Claude Codeプラグイン開発のサンプル実装。
+コミットとPR作成を効率化するGit操作プラグイン。ブランチ名と変更内容からConventional Commits形式のコミットメッセージを自動生成し、GitHub PR作成もコマンド一発で実行できます。
 
-- **コマンド**: `/hello-world:greet` - 挨拶メッセージを表示
-- **スキル**: プロジェクト情報の自動分析
+- `/smart-git:commit` - Conventional Commits形式でコミット
+- `/smart-git:create-pr` - GitHub PRを作成
+- `/smart-git:commit-and-pr` - コミット → プッシュ → PR作成を一括実行
 
-**インストール**:
+```bash
+/plugin install smart-git@my-claude-plugins
+```
+
+---
+
+### [regex-helper](plugins/regex-helper/README.md)
+
+対話型で正規表現を作成・テスト・デバッグできるプラグイン。正規表現が苦手な人でも、対話しながら目的の正規表現を作れます。
+
+- `/regex-helper:build` - 対話型で正規表現を構築（自然言語・サンプルからも対応）
+- `/regex-helper:explain` - 正規表現を分解して解説
+- `/regex-helper:test` - 正規表現をテスト
+- `/regex-helper:debug` - マッチしない原因を特定
+
+```bash
+/plugin install regex-helper@my-claude-plugins
+```
+
+---
+
+### [creative-ui-designer](plugins/creative-ui-designer/README.md)
+
+AIっぽくない、独創的で印象的なUIデザインを生成するプラグイン。Claudeが生成しがちな「安全な」デザイン（Interフォント、紫グラデーション等）を回避し、IDEテーマや文化的美学から着想を得たユニークなUIを作成します。
+
+- `/creative-ui-designer:create-component` - 独創的なUIコンポーネントを作成
+- `/creative-ui-designer:design-page` - ページ全体をデザイン
+- `/creative-ui-designer:evaluate-design` - 既存デザインを評価し改善提案
+
+```bash
+/plugin install creative-ui-designer@my-claude-plugins
+```
+
+---
+
+### [hello-world](plugins/hello-world/README.md)
+
+Claude Codeプラグイン開発の入門用サンプルプラグイン。新しいプラグインを作成する際の参考にどうぞ。
+
+- `/hello-world:greet` - 挨拶メッセージを表示
+
 ```bash
 /plugin install hello-world@my-claude-plugins
-```
-
-## プラグイン開発
-
-### 新しいプラグインの作成
-
-1. `templates/plugin-template` をコピー:
-
-   ```bash
-   cp -r templates/plugin-template plugins/your-plugin-name
-   ```
-
-2. `plugins/your-plugin-name/.claude-plugin/plugin.json` を編集
-
-3. コマンド、スキル、エージェントを追加
-
-4. `plugins/your-plugin-name/README.md` にドキュメントを記載
-
-5. `.claude-plugin/marketplace.json` にプラグインを追加
-
-### プラグイン構造
-
-```
-your-plugin/
-├── .claude-plugin/
-│   └── plugin.json          # プラグインメタデータ（必須）
-├── commands/                # スラッシュコマンド（.mdファイル）
-├── skills/                  # スキル（SKILL.mdファイル）
-├── agents/                  # エージェント（YAMLファイル）
-├── hooks/                   # イベントフック
-│   └── hooks.json
-└── README.md                # ドキュメント
-```
-
-## ローカルテスト
-
-開発中のプラグインをローカルでテストする場合：
-
-```bash
-/plugin marketplace add ./path/to/my-claude-plugins
-/plugin install your-plugin@my-claude-plugins
 ```
 
 ## ライセンス
