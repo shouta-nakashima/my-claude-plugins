@@ -1,20 +1,11 @@
 # Coaching for Claude Desktop
 
-Claude Desktop でコーチングを使う方法は2つあります。
+Claude Desktop の Skills 機能を使ってコーチングを利用する方法です。
 
-> **注意**: どちらの方法も Claude **Pro/Team/Max** プランが必要です。
+> **注意**: Skills は Claude **Pro/Team/Max/Enterprise** プランで利用可能です。
 > 無料版をお使いの方は [MCP Server](../mcp/) をご利用ください。
 
-## 方法の比較
-
-| 方法 | 特徴 | おすすめの人 |
-|------|------|-------------|
-| **Skills（推奨）** | 自動で発動、全チャットで使える | 手軽に使いたい人 |
-| **Project Knowledge** | プロジェクト内限定 | 他の資料と組み合わせたい人 |
-
----
-
-## 方法1: Skills を使う（推奨）
+## セットアップ手順
 
 ### Step 1: スキルをダウンロード
 
@@ -40,52 +31,14 @@ Claude Desktop でコーチングを使う方法は2つあります。
 - 「考えを整理したい」
 - 「目標を決めたい」
 
----
-
-## 方法2: Project Knowledge を使う
-
-プロジェクト単位でコーチングを使いたい場合はこちら。
-
-### Step 1: プロンプトファイルをダウンロード
-
-**[coaching-prompt.md をダウンロード](https://raw.githubusercontent.com/shouta-nakashima/my-claude-plugins/main/plugins/coaching/desktop/coaching-prompt.md)**
-
-### Step 2: Project を作成
-
-1. Claude Desktop を開く
-2. 左サイドバーの **「Projects」** をクリック
-3. **「New Project」** をクリック
-4. プロジェクト名を入力（例：「コーチング」）
-
-### Step 3: Project Knowledge に追加
-
-1. 作成したプロジェクトを開く
-2. **「Project Knowledge」** セクションを見つける
-3. ダウンロードした `coaching-prompt.md` をドラッグ&ドロップ
-
-### Step 4: 使用開始
-
-プロジェクト内で新しいチャットを開始し、「コーチングして」と話しかけてください。
-
-### Custom Instructions（オプション）
-
-より確実にコーチングモードで動作させたい場合：
-
-```
-Project Knowledgeにあるコーチングプロンプトに従って対話してください。
-```
-
----
-
 ## ファイル構成
 
 ```
 desktop/
 ├── README.md              # このファイル
-├── coaching-skill.zip     # Skills用（方法1）
-├── coaching-skill/
-│   └── SKILL.md           # スキル定義
-└── coaching-prompt.md     # Project Knowledge用（方法2）
+├── coaching-skill.zip     # アップロード用ZIP
+└── coaching-skill/
+    └── SKILL.md           # スキル定義
 ```
 
 ## 関連リンク

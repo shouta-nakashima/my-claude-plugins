@@ -128,10 +128,9 @@ coaching/
 │   └── coaching.md              # /coaching コマンド
 ├── skills/
 │   └── SKILL.md                 # コーチングロジック
-├── desktop/                     # Claude Desktop (Pro) 用
+├── desktop/                     # Claude Desktop (有料版) 用
 │   ├── README.md
-│   ├── coaching-skill.zip       # Skills用
-│   └── coaching-prompt.md       # Project Knowledge用
+│   └── coaching-skill.zip       # Skills用
 └── mcp/                         # Claude Desktop (無料版) 用
     ├── README.md
     ├── server.py
