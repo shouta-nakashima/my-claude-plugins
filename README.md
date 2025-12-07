@@ -80,6 +80,19 @@ AIっぽくない、独創的で印象的なUIデザインを生成するプラ�
 /plugin install creative-ui-designer@my-claude-plugins
 ```
 
+---
+
+### [meeting-agenda](plugins/meeting-agenda/README.md)
+
+対話形式でMTGアジェンダを作成するプラグイン。自由記述またはテンプレートからMTGタイプを選び、Slack・Notion・Markdownなど5種類の出力形式でアジェンダを生成できます。
+
+- `/agenda` - 対話形式でアジェンダを作成
+- `/minutes` - 議事録テンプレートを生成
+
+```bash
+/plugin install meeting-agenda@my-claude-plugins
+```
+
 ## ライセンス
 
 MIT
