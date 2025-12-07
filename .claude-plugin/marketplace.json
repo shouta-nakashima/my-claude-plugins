@@ -42,6 +42,17 @@
       "tags": ["regex", "regular-expression", "pattern", "validation", "text-processing", "developer-tools"]
     },
     {
+      "name": "meeting-agenda",
+      "source": "./plugins/meeting-agenda",
+      "description": "対話形式でMTGアジェンダを作成。全MTGタイプ対応、Slack/Notion/Markdown等の出力形式選択可能。議事録テンプレート生成機能付き",
+      "version": "1.0.0",
+      "author": {
+        "name": "shouta-nakashima",
+        "url": "https://github.com/shouta-nakashima"
+      },
+      "tags": ["meeting", "agenda", "facilitation", "management", "slack", "notion", "productivity"]
+    },
+    {
       "name": "coaching",
       "source": "./plugins/coaching",
       "description": "対話型AIコーチング - GROW/OSKARモデルを活用し、目標達成・意思決定・内省をサポート",

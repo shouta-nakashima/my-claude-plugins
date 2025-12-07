@@ -1,0 +1,14 @@
+{
+  "name": "meeting-agenda",
+  "version": "1.0.0",
+  "description": "対話形式でMTGアジェンダを作成。全MTGタイプ対応、Slack/Notion/Markdown等の出力形式選択可能",
+  "author": {
+    "name": "shouta-nakashima",
+    "url": "https://github.com/shouta-nakashima"
+  },
+  "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
+  "license": "MIT",
+  "keywords": ["meeting", "agenda", "facilitation", "management", "slack", "notion", "productivity"],
+  "commands": "./commands",
+  "skills": "./skills"
+}
