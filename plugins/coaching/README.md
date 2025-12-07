@@ -127,6 +127,56 @@ Claude Desktop（Pro/Team/Max）でも同じコーチング体験ができます
 Project Knowledgeにあるコーチングプロンプトに従って対話してください。
 ```
 
+## MCP Server として使う（無料版対応）
+
+ローカルにクローンしてMCPサーバーとして起動すれば、**無料版でも毎回コピペ不要**で使えます。
+
+### セットアップ手順
+
+1. リポジトリをクローン：
+
+```bash
+git clone https://github.com/shouta-nakashima/my-claude-plugins.git
+cd my-claude-plugins/plugins/coaching/mcp
+```
+
+2. 依存関係をインストール：
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Claude Desktop の設定ファイルを編集：
+
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "coaching": {
+      "command": "python",
+      "args": ["/path/to/my-claude-plugins/plugins/coaching/mcp/server.py"]
+    }
+  }
+}
+```
+
+4. Claude Desktopを再起動
+
+### 使い方
+
+MCPサーバーが起動すると、以下のプロンプトが利用可能になります：
+
+| プロンプト | 説明 |
+|-----------|------|
+| `coaching` | 自動選択モード（テーマに応じてフレームワークを選択） |
+| `coaching_grow` | GROWモデルで固定 |
+| `coaching_oskar` | OSKARモデルで固定 |
+| `coaching_free` | 自由対話モードで固定 |
+
+Claude Desktopで「+」→「MCP Server」→「coaching」から選択できます。
+
 ## 注意事項
 
 - コーチングは「アドバイス」ではなく「引き出し」のアプローチです
