@@ -10,11 +10,11 @@
 
 ## 利用方法
 
-| 環境 | 方法 | Pro版必要 | リンク |
-|------|------|----------|--------|
-| Claude Code | `/coaching` コマンド | - | [使い方](#claude-code-で使う) |
-| Claude Desktop | Skills（推奨） | ○ | [セットアップ →](./desktop/) |
-| Claude Desktop | MCP Server | × | [セットアップ →](./mcp/) |
+| 環境 | 方法 | 必要プラン | リンク |
+|------|------|-----------|--------|
+| Claude Code | `/coaching` コマンド | Pro以上 | [使い方](#claude-code-で使う) |
+| Claude Desktop | Skills | Pro以上 | [セットアップ →](./desktop/) |
+| Claude Desktop | MCP Server | **無料OK** | [セットアップ →](./mcp/) |
 
 ## Claude Code で使う
 
