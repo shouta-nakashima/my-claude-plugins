@@ -103,6 +103,30 @@ AI: 今日話したことを整理させてください。
     応援しています！
 ```
 
+## Claude Desktop で使う
+
+Claude Desktop（Pro/Team/Max）でも同じコーチング体験ができます。
+
+### セットアップ手順
+
+1. 以下のファイルをダウンロード：
+
+   **[coaching-prompt.md をダウンロード](https://raw.githubusercontent.com/shouta-nakashima/my-claude-plugins/main/plugins/coaching/desktop/coaching-prompt.md)**
+
+2. Claude Desktopで新しい **Project** を作成
+
+3. **Project Knowledge** にダウンロードしたファイルをドラッグ&ドロップ
+
+4. 「コーチングして」と話しかけるとセッション開始
+
+### Custom Instructions（オプション）
+
+より短い指示で済ませたい場合は、ProjectのCustom Instructionsに以下を設定：
+
+```
+Project Knowledgeにあるコーチングプロンプトに従って対話してください。
+```
+
 ## 注意事項
 
 - コーチングは「アドバイス」ではなく「引き出し」のアプローチです
