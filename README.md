@@ -93,6 +93,26 @@ AIっぽくない、独創的で印象的なUIデザインを生成するプラ�
 /plugin install meeting-agenda@my-claude-plugins
 ```
 
+---
+
+### [coaching](plugins/coaching/README.md)
+
+対話型AIコーチングプラグイン。GROW/OSKARモデルを活用し、目標達成・意思決定・内省をサポートします。テーマに応じて最適なフレームワークを自動選択。
+
+- `/coaching` - 対話型コーチングセッションを開始
+
+**利用方法:**
+
+| 環境 | 方法 | 必要プラン |
+|------|------|-----------|
+| Claude Code | `/coaching` | Pro以上 |
+| Claude Desktop | [Skills](plugins/coaching/desktop/) | Pro以上 |
+| Claude Desktop | [MCP Server](plugins/coaching/mcp/) | **無料OK** |
+
+```bash
+/plugin install coaching@my-claude-plugins
+```
+
 ## ライセンス
 
 MIT
