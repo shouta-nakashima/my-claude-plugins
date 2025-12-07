@@ -10,11 +10,11 @@
 
 ## 利用方法
 
-| 環境 | 方法 | リンク |
-|------|------|--------|
-| Claude Code | `/coaching` コマンド | [使い方](#claude-code-で使う) |
-| Claude Desktop (Pro) | Project Knowledge | [セットアップ →](./desktop/) |
-| Claude Desktop (無料版) | MCP Server | [セットアップ →](./mcp/) |
+| 環境 | 方法 | Pro版必要 | リンク |
+|------|------|----------|--------|
+| Claude Code | `/coaching` コマンド | - | [使い方](#claude-code-で使う) |
+| Claude Desktop | Skills（推奨） | ○ | [セットアップ →](./desktop/) |
+| Claude Desktop | MCP Server | × | [セットアップ →](./mcp/) |
 
 ## Claude Code で使う
 
@@ -130,8 +130,9 @@ coaching/
 │   └── SKILL.md                 # コーチングロジック
 ├── desktop/                     # Claude Desktop (Pro) 用
 │   ├── README.md
-│   └── coaching-prompt.md
-└── mcp/                         # Claude Desktop (MCP) 用
+│   ├── coaching-skill.zip       # Skills用
+│   └── coaching-prompt.md       # Project Knowledge用
+└── mcp/                         # Claude Desktop (無料版) 用
     ├── README.md
     ├── server.py
     └── requirements.txt

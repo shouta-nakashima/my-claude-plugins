@@ -1,15 +1,52 @@
-# Coaching for Claude Desktop (Pro/Team/Max)
+# Coaching for Claude Desktop
 
-Claude Desktop の Project 機能を使って、コーチングプロンプトを設定する方法です。
+Claude Desktop でコーチングを使う方法は2つあります。
 
-> **注意**: この方法は Claude Pro/Team/Max プランが必要です。
+> **注意**: どちらの方法も Claude **Pro/Team/Max** プランが必要です。
 > 無料版をお使いの方は [MCP Server](../mcp/) をご利用ください。
 
-## セットアップ手順
+## 方法の比較
+
+| 方法 | 特徴 | おすすめの人 |
+|------|------|-------------|
+| **Skills（推奨）** | 自動で発動、全チャットで使える | 手軽に使いたい人 |
+| **Project Knowledge** | プロジェクト内限定 | 他の資料と組み合わせたい人 |
+
+---
+
+## 方法1: Skills を使う（推奨）
+
+### Step 1: スキルをダウンロード
+
+以下のリンクからZIPファイルをダウンロード：
+
+**[coaching-skill.zip をダウンロード](https://github.com/shouta-nakashima/my-claude-plugins/raw/main/plugins/coaching/desktop/coaching-skill.zip)**
+
+### Step 2: スキルをアップロード
+
+1. Claude Desktop を開く
+2. **Settings**（設定）を開く
+3. **Capabilities**（機能）をクリック
+4. **Skills** セクションまでスクロール
+5. **「Upload skill」** をクリック
+6. ダウンロードした `coaching-skill.zip` を選択
+
+### Step 3: 使用開始
+
+どのチャットでも、以下のように話しかけるとスキルが自動で発動します：
+
+- 「コーチングして」
+- 「相談に乗って」
+- 「考えを整理したい」
+- 「目標を決めたい」
+
+---
+
+## 方法2: Project Knowledge を使う
+
+プロジェクト単位でコーチングを使いたい場合はこちら。
 
 ### Step 1: プロンプトファイルをダウンロード
-
-以下のリンクからダウンロード：
 
 **[coaching-prompt.md をダウンロード](https://raw.githubusercontent.com/shouta-nakashima/my-claude-plugins/main/plugins/coaching/desktop/coaching-prompt.md)**
 
@@ -28,29 +65,31 @@ Claude Desktop の Project 機能を使って、コーチングプロンプト�
 
 ### Step 4: 使用開始
 
-プロジェクト内で新しいチャットを開始し、以下のように話しかけてください：
+プロジェクト内で新しいチャットを開始し、「コーチングして」と話しかけてください。
 
-- 「コーチングして」
-- 「相談に乗って」
-- 「考えを整理したい」
+### Custom Instructions（オプション）
 
-## Custom Instructions（オプション）
-
-より確実にコーチングモードで動作させたい場合は、Project の Custom Instructions に以下を設定：
+より確実にコーチングモードで動作させたい場合：
 
 ```
 Project Knowledgeにあるコーチングプロンプトに従って対話してください。
 ```
+
+---
 
 ## ファイル構成
 
 ```
 desktop/
 ├── README.md              # このファイル
-└── coaching-prompt.md     # コーチングプロンプト本体
+├── coaching-skill.zip     # Skills用（方法1）
+├── coaching-skill/
+│   └── SKILL.md           # スキル定義
+└── coaching-prompt.md     # Project Knowledge用（方法2）
 ```
 
 ## 関連リンク
 
 - [メインREADME](../README.md) - プラグイン全体の説明
 - [MCP Server](../mcp/) - 無料版向けセットアップ
+- [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude) - 公式ドキュメント
