@@ -40,6 +40,17 @@
         "url": "https://github.com/shouta-nakashima"
       },
       "tags": ["regex", "regular-expression", "pattern", "validation", "text-processing", "developer-tools"]
+    },
+    {
+      "name": "coaching",
+      "source": "./plugins/coaching",
+      "description": "対話型AIコーチング - GROW/OSKARモデルを活用し、目標達成・意思決定・内省をサポート",
+      "version": "1.0.0",
+      "author": {
+        "name": "shouta-nakashima",
+        "url": "https://github.com/shouta-nakashima"
+      },
+      "tags": ["coaching", "grow", "oskar", "goal-setting", "decision-making", "self-reflection", "dialogue"]
     }
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "name": "coaching",
+  "version": "1.0.0",
+  "description": "対話型AIコーチング - GROW/OSKARモデルを活用し、目標達成・意思決定・内省をサポート",
+  "author": {
+    "name": "shouta-nakashima",
+    "url": "https://github.com/shouta-nakashima"
+  },
+  "repository": "https://github.com/shouta-nakashima/my-claude-plugins",
+  "license": "MIT",
+  "keywords": ["coaching", "grow", "oskar", "goal-setting", "decision-making", "self-reflection", "dialogue"],
+  "commands": "./commands",
+  "skills": "./skills"
+}
